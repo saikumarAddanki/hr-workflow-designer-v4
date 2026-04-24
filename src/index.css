@@ -1,0 +1,83 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg: #fafaf8;
+  --bg-card: #ffffff;
+  --bg-hover: #f0f4ff;
+  --border: #e8e8e2;
+  --border-light: #d8d8d0;
+  --text: #1a1a18;
+  --text-muted: #6b6b60;
+  --text-dim: #a8a89a;
+  --accent: #2563eb;
+  --accent-glow: rgba(37,99,235,0.10);
+  --green: #2563eb;
+  --orange: #c96a2a;
+  --purple: #6b4fa8;
+  --red: #b83232;
+  --yellow: #b87a10;
+  --node-start: #2563eb;
+  --node-task: #0ea5e9;
+  --node-approval: #6b4fa8;
+  --node-auto: #c96a2a;
+  --node-end: #b83232;
+  --radius: 10px;
+  --radius-sm: 6px;
+  --shadow: 0 2px 12px rgba(0,0,0,0.08);
+  --font: 'Fraunces', serif;
+  --mono: 'DM Mono', monospace;
+}
+
+[data-theme="dark"] {
+  --bg: #0f1117;
+  --bg-card: #161b27;
+  --bg-hover: #1e2535;
+  --border: #252d3d;
+  --border-light: #2e3850;
+  --text: #e8e8e0;
+  --text-muted: #8a9ab8;
+  --text-dim: #4a5568;
+  --accent: #2563eb;
+  --accent-glow: rgba(37,99,235,0.15);
+  --green: #2563eb;
+  --orange: #f97316;
+  --purple: #a78bfa;
+  --red: #f87171;
+  --yellow: #fbbf24;
+  --node-start: #2563eb;
+  --node-task: #0ea5e9;
+  --node-approval: #a78bfa;
+  --node-auto: #f97316;
+  --node-end: #f87171;
+  --shadow: 0 2px 12px rgba(0,0,0,0.4);
+}
+
+html, body, #root { height: 100%; width: 100%; overflow: hidden; }
+body { font-family: var(--font); background: var(--bg); color: var(--text); font-size: 14px; line-height: 1.5; }
+
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--border-light); border-radius: 3px; }
+
+.react-flow__background { background: var(--bg) !important; }
+.react-flow__controls { background: var(--bg-card) !important; border: 1px solid var(--border) !important; border-radius: var(--radius) !important; box-shadow: var(--shadow) !important; }
+.react-flow__controls button { background: transparent !important; border: none !important; color: var(--text-muted) !important; border-bottom: 1px solid var(--border) !important; }
+.react-flow__controls button:last-child { border-bottom: none !important; }
+.react-flow__controls button:hover { background: var(--bg-hover) !important; color: var(--text) !important; }
+.react-flow__controls-icon { fill: currentColor !important; }
+.react-flow__minimap { background: var(--bg-card) !important; border: 1px solid var(--border) !important; border-radius: var(--radius) !important; }
+.react-flow__edge-path { stroke-width: 2; }
+.react-flow__edge.selected .react-flow__edge-path { stroke: var(--accent) !important; }
+.react-flow__handle { width: 10px !important; height: 10px !important; border: 2px solid var(--bg-card) !important; }
+.react-flow__handle-top { top: -5px !important; }
+.react-flow__handle-bottom { bottom: -5px !important; }
+.react-flow__connection-line { stroke: var(--accent); stroke-width: 2; }
+.react-flow__edge-textbg { fill: var(--bg-card) !important; }
+.react-flow__panel { background: transparent !important; }
+
+@keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes slideIn { from { opacity: 0; transform: translateX(12px); } to { opacity: 1; transform: translateX(0); } }
+@keyframes spin { to { transform: rotate(360deg); } }
+
+.animate-fadein { animation: fadeIn 0.2s ease; }
+.animate-slidein { animation: slideIn 0.2s ease; }
